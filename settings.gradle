@@ -1,0 +1,2 @@
+include ':app', ':iconifydemo'
+rootProject.name='PlayDemo'
