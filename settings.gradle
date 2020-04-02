@@ -1,2 +1,2 @@
-include ':app', ':iconifydemo', ':testwritedemo', ':roomdemo'
+include ':app', ':iconifydemo', ':testwritedemo', ':roomdemo', ':hookdemo'
 rootProject.name='PlayDemo'
