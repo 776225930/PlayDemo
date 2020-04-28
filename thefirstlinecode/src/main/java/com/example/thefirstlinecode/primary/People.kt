@@ -5,5 +5,5 @@ package com.example.thefirstlinecode.primary
  * @author JiangHao
  * @describe
  */
-class People {
+data class People(var name: String, var age: Int) {
 }

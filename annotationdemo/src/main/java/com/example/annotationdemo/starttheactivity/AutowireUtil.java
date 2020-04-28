@@ -21,11 +21,6 @@ public class AutowireUtil {
     public static void autoWired(Activity activity) {
         Class<? extends Activity> activityClass = activity.getClass();
         Log.e(TAG, "autoWired activityClass == " + activityClass);
-        /**
-         *  public Intent getIntent() {
-         *         return mIntent;
-         *     }
-         */
         try {
             //拿到Activity的mIntent Field
 //            Field mIntentField = activityClass.getDeclaredField("mIntent");

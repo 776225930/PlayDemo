@@ -1,4 +1,4 @@
-package com.example.thefirstlinecode
+package com.example.thefirstlinecode.primary
 
 /**
  * @date   2020/4/13

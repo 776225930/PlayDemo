@@ -1,6 +1,5 @@
 package com.jhao.testwritedemo;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Context;
@@ -9,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedWriter;
 import java.io.File;
