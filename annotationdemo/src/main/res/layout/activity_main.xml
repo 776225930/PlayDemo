@@ -14,8 +14,9 @@
         android:text="Hello World!" />
 
     <Button
-        android:onClick="jump"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="jump"
+        android:text="JUMP" />
 
 </LinearLayout>

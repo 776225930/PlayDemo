@@ -14,6 +14,9 @@ public class ParamActivity extends AppCompatActivity {
     private String name;
     @Autowired("boy")
     private boolean isBoy;
+    @Autowired("students")
+    private Student[] mStudents;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +24,8 @@ public class ParamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_param);
         AutowireUtil.autoWired(this);
         Log.e(TAG, "onCreate: name == " + name + " isBOy == " + isBoy);
+        for (Student student : mStudents) {
+            Log.e(TAG, "onCreate: " + student);
+        }
     }
 }

@@ -2,8 +2,10 @@ package com.example.annotationdemo.starttheactivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -36,20 +38,26 @@ public class AutowireUtil {
                     if (field.isAnnotationPresent(Autowired.class)) {
                         Autowired annotation = field.getAnnotation(Autowired.class);
                         String value = annotation.value();
-                        String typeName = field.getType().getName();
-                        Log.e(TAG, "autoWired: " + typeName);
-                        if ("boolean".equals(typeName.toString())) {
-                            boolean booleanExtra = mIntent.getBooleanExtra(value, false);
-                            field.set(activity, booleanExtra);
-                        } else if ("java.lang.String".equals(typeName.toString())) {
-                            String stringExtra = mIntent.getStringExtra(value);
-                            field.set(activity, stringExtra);
+                        Class<?> type = field.getType();
+                        Log.e(TAG, "autoWired: " + type.getName());
+                        Bundle extras = mIntent.getExtras();
+                        Object fieldValue = extras.get(value);
+                        Log.e(TAG, "autoWired: fieldValue == " + fieldValue + " ; " + fieldValue.getClass() + " ; " + type.isArray());
+                        if (type.isArray()) {
+                            Object[] objects = (Object[]) fieldValue;//反序列化生产的object[]
+//                            Class<?> componentType = field.getClass().getComponentType();//错误,返回null,应该使用getType()
+                            Class<?> componentType = field.getType().getComponentType();//获得数组的成员类型
+                            Log.e(TAG, "autoWired: componentType == " + componentType);
+                            //Array.newInstance(clazz,length) 相当于 Clazz[] array = new Clazz[length];
+                            //但是clazz未知时候，无法用后者
+                            Object newArr = Array.newInstance(componentType, objects.length);
+                            for (int i = 0; i < objects.length; i++) {
+                                Array.set(newArr, i, objects[i]);
+                            }
+                            field.set(activity, newArr);
+                        } else {
+                            field.set(activity, fieldValue);
                         }
-//                        if ("name".equals(annotation.value())) {
-//                            field.set(activity, mIntent.getStringExtra("name"));
-//                        } else if ("name".equals(annotation.value())) {
-//                            field.set(activity, mIntent.getBooleanExtra("isBoy", false));
-//                        }
                     }
                 }
 

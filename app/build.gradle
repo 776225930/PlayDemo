@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
+<<<<<<< HEAD
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+=======
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+>>>>>>> cde122bde3f30d286d4afceacdce18aa34196a50
 
 android {
     compileSdkVersion 29
@@ -20,7 +24,14 @@ android {
         }
     }
 }
-
+greendao {
+    //数据库的schema版本，也可以理解为数据库版本号
+    schemaVersion 1
+    //设置DaoMaster、DaoSession、Dao包名，也就是要放置这些类的包的全路径。
+    daoPackage 'com.jhao.playdemo.greendao'
+    //设置DaoMaster、DaoSession、Dao目录
+    targetGenDir 'src/main/java'
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -30,5 +41,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'androidx.room:room-runtime:2.2.5'
     annotationProcessor 'androidx.room:room-compiler:2.2.5'
+<<<<<<< HEAD
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+=======
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
+>>>>>>> cde122bde3f30d286d4afceacdce18aa34196a50
 }
