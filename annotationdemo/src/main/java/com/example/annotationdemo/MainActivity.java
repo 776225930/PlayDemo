@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void jump(View view) {
         Intent intent = new Intent(this, ParamActivity.class)
-                .putExtra("name", "JiangHao")
+                .putExtra("name", "Lance")
                 .putExtra("boy", true);//页面跳转携带参数
         startActivity(intent);
 

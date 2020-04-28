@@ -2,6 +2,7 @@ package com.example.annotationdemo.starttheactivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
 import java.lang.reflect.Field;
@@ -43,13 +44,16 @@ public class AutowireUtil {
                         String value = annotation.value();
                         String typeName = field.getType().getName();
                         Log.e(TAG, "autoWired: " + typeName);
-                        if ("boolean".equals(typeName.toString())) {
-                            boolean booleanExtra = mIntent.getBooleanExtra(value, false);
-                            field.set(activity, booleanExtra);
-                        } else if ("java.lang.String".equals(typeName.toString())) {
-                            String stringExtra = mIntent.getStringExtra(value);
-                            field.set(activity, stringExtra);
-                        }
+                        Bundle extras = mIntent.getExtras();
+//                        if ("boolean".equals(typeName.toString())) {
+//                            boolean booleanExtra = mIntent.getBooleanExtra(value, false);
+//                            field.set(activity, booleanExtra);
+//                        } else if ("java.lang.String".equals(typeName.toString())) {
+//                            String stringExtra = mIntent.getStringExtra(value);
+//                            field.set(activity, stringExtra);
+//                        }
+                        Object fieldValue = extras.get(value);
+                        field.set(activity, fieldValue);
 //                        if ("name".equals(annotation.value())) {
 //                            field.set(activity, mIntent.getStringExtra("name"));
 //                        } else if ("name".equals(annotation.value())) {
