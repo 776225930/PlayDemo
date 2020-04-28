@@ -52,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void write(View view) {
-        String filePath = "/mnt/oem/everobo_v32/test";
+        String filePath = "/mnt/oem/everobo_v32/test2";
         Log.e(TAG, "write  filePath ==  " + filePath);
         File file = new File(filePath);
         if (!file.exists()) {
-            file.mkdirs();
+            boolean mkdirs = file.mkdirs();
+            Log.e(TAG, "write: mkdirs ="+mkdirs );
         }
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("/mnt/oem/everobo_v32/test.txt")));

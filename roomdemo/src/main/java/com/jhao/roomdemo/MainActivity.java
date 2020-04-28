@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mStudentViewModel = ViewModelProviders.of(this).get(StudentViewModel.class);
+//        mStudentViewModel = ViewModelProviders.of(this).get(StudentViewModel.class);
+        mStudentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
         mStudentViewModel.getAllLiveDataStudent().observe(this, new Observer<List<Student>>() {
             @Override
             public void onChanged(List<Student> students) {
