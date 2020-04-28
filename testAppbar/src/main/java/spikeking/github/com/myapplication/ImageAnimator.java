@@ -1,9 +1,10 @@
 package spikeking.github.com.myapplication;
 
-import android.support.annotation.DrawableRes;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.annotation.DrawableRes;
 
 /**
  * 渐变的动画效果

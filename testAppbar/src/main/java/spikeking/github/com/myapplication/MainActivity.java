@@ -1,17 +1,19 @@
 package spikeking.github.com.myapplication;
 
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,10 +21,14 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    @Bind(R.id.main_vp_container) ViewPager mVpContainer;
-    @Bind(R.id.toolbar_tl_tab) TabLayout mTlTab;
-    @Bind(R.id.appbar_iv_outgoing) ImageView mIvOutgoing;
-    @Bind(R.id.appbar_iv_target) ImageView mIvTarget;
+    @Bind(R.id.main_vp_container)
+    ViewPager mVpContainer;
+    @Bind(R.id.toolbar_tl_tab)
+    TabLayout mTlTab;
+    @Bind(R.id.appbar_iv_outgoing)
+    ImageView mIvOutgoing;
+    @Bind(R.id.appbar_iv_target)
+    ImageView mIvTarget;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

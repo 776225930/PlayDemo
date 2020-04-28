@@ -1,8 +1,9 @@
 package spikeking.github.com.myapplication;
 
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.ImageView;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * ViewPager滑动页面监听

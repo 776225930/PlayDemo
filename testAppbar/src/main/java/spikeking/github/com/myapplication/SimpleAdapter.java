@@ -1,9 +1,10 @@
 package spikeking.github.com.myapplication;
 
-import android.support.annotation.DrawableRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
+import androidx.annotation.DrawableRes;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 /**
  * ViewPager的适配器
@@ -46,7 +47,8 @@ public class SimpleAdapter extends FragmentPagerAdapter {
     }
 
     // 图片接口
-    public @DrawableRes int getDrawable(int position) {
+    public @DrawableRes
+    int getDrawable(int position) {
         if (position >= 0 && position < SECTIONS.length) {
             return SECTIONS[position].getDrawable();
         }

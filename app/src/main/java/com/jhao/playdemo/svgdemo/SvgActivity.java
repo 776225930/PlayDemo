@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.jhao.playdemo.R;
+
+
 public class SvgActivity extends AppCompatActivity {
 
     @Override
