@@ -16,6 +16,10 @@ public class ParamActivity extends AppCompatActivity {
     private boolean isBoy;
     @Autowired("students")
     private Student[] mStudents;
+    @Autowired("teachers")
+    private Teacher[] mTeachers;
+    @Autowired("ints")
+    private int[] mInts;
 
 
     @Override
@@ -26,6 +30,12 @@ public class ParamActivity extends AppCompatActivity {
         Log.e(TAG, "onCreate: name == " + name + " isBOy == " + isBoy);
         for (Student student : mStudents) {
             Log.e(TAG, "onCreate: " + student);
+        }
+        for (Teacher teacher : mTeachers) {
+            Log.e(TAG, "onCreate: " + teacher);
+        }
+        for (int i : mInts) {
+            Log.e(TAG, "onCreate: " + i);
         }
     }
 }
