@@ -3,6 +3,7 @@
 package com.example.thefirstlinecode.primary
 
 import java.lang.StringBuilder
+import kotlin.math.min
 
 /**
  * @date   2020/4/12
@@ -92,6 +93,17 @@ fun main() {
     }
     println(str2)
 
+    //扩展函数
+    fun String.letterCount(): Int {
+        var count = 0
+        for (char in this) {
+            if (char.isLetter()) {
+                count++
+            }
+        }
+        return count
+    }
+    println("abc123d".letterCount())
     //运算符重载
     data class Money(val value: Int) {
 
@@ -100,9 +112,17 @@ fun main() {
             val sum = value + o1.value;
             return Money(sum)
         }
+
+        operator fun minus(m1: Money): Int {
+            val min = value - m1.value;
+            return min
+        }
     }
 
     val m1: Money = Money(12)
     val m2: Money = Money(13)
     println(m1 + m2)
+    println(m2 - m1)
+
+
 }
