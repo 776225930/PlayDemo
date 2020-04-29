@@ -124,5 +124,11 @@ fun main() {
     println(m1 + m2)
     println(m2 - m1)
 
+    //高阶函数
+    fun example(func: (Int, String) -> Unit): Unit {
+        func(123, "234")
+    }
+
+
 
 }
