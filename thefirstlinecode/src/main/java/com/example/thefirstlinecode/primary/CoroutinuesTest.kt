@@ -12,7 +12,9 @@ fun main() {
 //      test1()
 //    test2()
 //    test3()
-    test4()
+//    test4()
+//    test6()
+    test7()
 
 }
 
@@ -97,4 +99,51 @@ fun test4() {
         println("coroutineScope finished")
     }
     println("runBlocking finished")
+}
+
+fun test5() {
+    val job = Job()
+    val scope = CoroutineScope(job)
+    scope.launch {
+        //处理具体逻辑
+    }
+    job.cancel()
+}
+
+fun test6() {
+    //协程的串行化执行
+    runBlocking {
+        val start = System.currentTimeMillis()
+        val result = async {
+            delay(1000)
+            5 + 5
+        }.await()
+        println(result)
+        val result1 = async {
+            delay(1000)
+            5 + 12
+        }.await()
+        println("result is ${result + result1}")
+        val end = System.currentTimeMillis()
+        println(end - start)
+    }
+}
+
+fun test7() {
+    //协程的串行化执行
+    runBlocking {
+        val start = System.currentTimeMillis()
+        val deferred = async {
+            delay(1000)
+            5 + 5
+        }
+        println(deferred)
+        val deferred1 = async {
+            delay(1000)
+            5 + 12
+        }
+        println("result is ${deferred.await() + deferred1.await()}")
+        val end = System.currentTimeMillis()
+        println(end - start)
+    }
 }
