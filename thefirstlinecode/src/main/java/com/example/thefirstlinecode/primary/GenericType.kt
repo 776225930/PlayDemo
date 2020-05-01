@@ -14,4 +14,18 @@ fun main() {
     val result2 = getGenericType<Int>();
     println(result2)
 
+    val student = Student()
+    val simpleData = SimpleData(student)
+
+    fun handleSimpleData(data: SimpleData<Person>) {
+        val personData = data.get()
+    }
+    handleSimpleData(simpleData)
+}
+
+class SimpleData<out T>(val data: T?) {
+
+    fun get(): T? {
+        return data
+    }
 }

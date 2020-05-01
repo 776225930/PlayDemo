@@ -10,6 +10,8 @@ class Student(val sno: String, val grade: Int, name: String, age: Int) : Person(
 
     }
 
+    constructor() : this("", 0, "", 1) {}
+
     override fun readBooks() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
