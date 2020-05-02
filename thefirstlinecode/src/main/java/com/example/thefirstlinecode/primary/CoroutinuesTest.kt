@@ -130,7 +130,7 @@ fun test6() {
 }
 
 fun test7() {
-    //协程的串行化执行
+    //协程的并行执行
     runBlocking {
         val start = System.currentTimeMillis()
         val deferred = async {
@@ -145,5 +145,15 @@ fun test7() {
         println("result is ${deferred.await() + deferred1.await()}")
         val end = System.currentTimeMillis()
         println(end - start)
+    }
+}
+
+fun test8() {
+    runBlocking {
+        //指定运行在那种类型线程中
+        val result = withContext(Dispatchers.Default) {
+            5 + 5
+        }
+        println(result)
     }
 }
