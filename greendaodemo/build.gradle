@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 29
@@ -22,13 +23,18 @@ android {
     }
 
 }
+greendao {
+    schemaVersion 1 //数据库版本号
+    daoPackage 'com.example.greendaodemo.db'// 设置DaoMaster、DaoSession、Dao   一般包名+文件夹名
+    targetGenDir 'src/main/java' //设置DaoMaster、DaoSession、Dao目录   文件生成的目录，相当于父级目录
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'org.greenrobot:greendao:3.3.0'
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.6'//加密库依赖（可选项）
 }
