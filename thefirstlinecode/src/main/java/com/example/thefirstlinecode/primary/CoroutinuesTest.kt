@@ -9,23 +9,23 @@ import kotlinx.coroutines.*
  */
 
 fun main() {
-//      test1()
+      test1()
 //    test2()
 //    test3()
 //    test4()
 //    test6()
-    test7()
+//    test7()
 
 }
 
 //协程的简单使用
 fun test1() {
     //不会阻塞当前线程,可能程序运行太快结束来不及执行
-    GlobalScope.launch {
-        println("codes run in coroutinue scope")
-        delay(1500)
-        println("codes run in coroutinue scope finished")
-    }
+//    GlobalScope.launch() {
+//        println("codes run in coroutinue scope")
+//        delay(1500)
+//        println("codes run in coroutinue scope finished")
+//    }
 //    Thread.sleep(1000)
     //会阻塞当前线程
     runBlocking {
@@ -33,6 +33,7 @@ fun test1() {
         delay(1500)
         println("codes1 run in coroutinue scope finished")
     }
+
 }
 
 //多协程的使用

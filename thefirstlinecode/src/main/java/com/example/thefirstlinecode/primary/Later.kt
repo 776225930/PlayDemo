@@ -15,6 +15,7 @@ class Later<T>(val block: () -> T) {
         if (value == null) {
             value = block
         }
+
         return value as T
     }
 }

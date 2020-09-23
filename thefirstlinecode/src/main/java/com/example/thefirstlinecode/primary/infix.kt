@@ -20,7 +20,7 @@ fun main() {
     //使用infix 函数调用方式
     val b = "Hello Kotlin" beginWith "Hello"
     println(b)
-
+    1 to "a"
     val listOf = listOf<String>("apple", "pear", "watermelon")
     val c = listOf has "apple"
     println(c)

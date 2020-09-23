@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import com.example.thefirstlinecode.fragmenttest.FragmentTestActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btn: Button = Button(this)
-        btn.setOnClickListener {}
+        btn.setOnClickListener {
+            jump(it);
+        }
     }
 
     fun jump(view: View) {
@@ -20,6 +23,13 @@ class MainActivity : AppCompatActivity() {
             putExtra("param1", "data1")
             putExtra("param2", "data2")
         }
+        startActivity(intent);
+    }
 
+    fun jump2(view: View) {
+        val intent = Intent(this, FragmentTestActivity::class.java).apply {
+
+        }
+        startActivity(intent)
     }
 }
