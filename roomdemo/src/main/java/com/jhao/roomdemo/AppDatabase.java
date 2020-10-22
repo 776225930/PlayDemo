@@ -14,7 +14,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
  * @date 2020/4/1
  * @describe 包含数据库持有者，并充当与应用程序持久化的、关系型的数据的底层连接的主要访问点
  */
-@Database(entities = {Student.class}, version = 1,exportSchema = false)
+@Database(entities = {Student.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;
 
@@ -49,5 +49,10 @@ public abstract class AppDatabase extends RoomDatabase {
         }
     };
 
+    /**
+     * 获取Dao,具体实现由Room在底层自动完成
+     *
+     * @return
+     */
     public abstract StudentDao studentDao();
 }

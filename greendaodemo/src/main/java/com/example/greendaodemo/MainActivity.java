@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void queryUser2(View view) {
         List<User> tom = daoSession.queryBuilder(User.class)
-                .where(UserDao.Properties.Name.like("dfhdfhdh")).list();
+                .where(UserDao.Properties.Name.like("Jerry0")).list();
         Log.e(TAG, "queryUser2: " + tom);
     }
 }
