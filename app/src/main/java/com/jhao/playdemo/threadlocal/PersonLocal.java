@@ -1,4 +1,4 @@
-package com.jhao.playdemo;
+package com.jhao.playdemo.threadlocal;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,6 +6,11 @@ import androidx.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 类似ThreadLocal
+ *
+ * @param <T>
+ */
 public class PersonLocal<T> {
     private static final Map<PersonLocalKey, Object> sValues = new HashMap<>();
 

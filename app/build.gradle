@@ -20,12 +20,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 greendao {
     //数据库的schema版本，也可以理解为数据库版本号
     schemaVersion 1
     //设置DaoMaster、DaoSession、Dao包名，也就是要放置这些类的包的全路径。
-    daoPackage 'com.jhao.playdemo.greendao'
+    daoPackage 'com.jhao.playdemo.applications.greendao'
     //设置DaoMaster、DaoSession、Dao目录
     targetGenDir 'src/main/java'
 }
@@ -41,4 +48,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'org.greenrobot:greendao:3.2.2' // add library
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }

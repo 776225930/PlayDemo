@@ -1,4 +1,4 @@
-package com.jhao.playdemo;
+package com.jhao.playdemo.applications;
 
 import android.graphics.drawable.Drawable;
 

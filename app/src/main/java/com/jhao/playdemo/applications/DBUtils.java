@@ -1,11 +1,10 @@
-package com.jhao.playdemo;
+package com.jhao.playdemo.applications;
 
 import android.content.Context;
 
-import com.jhao.playdemo.greendao.AppInfoDao;
-import com.jhao.playdemo.greendao.DaoSession;
-
-import org.greenrobot.greendao.query.QueryBuilder;
+import com.jhao.playdemo.applications.greendao.DBManager;
+import com.jhao.playdemo.applications.greendao.AppInfoDao;
+import com.jhao.playdemo.applications.greendao.DaoSession;
 
 import java.util.List;
 

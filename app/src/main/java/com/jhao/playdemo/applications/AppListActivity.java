@@ -1,11 +1,5 @@
-package com.jhao.playdemo;
+package com.jhao.playdemo.applications;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -13,17 +7,25 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.jhao.playdemo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity {
+/**
+ * @author JiangHao
+ * @date 2020/11/1
+ * @describe
+ */
+public class AppListActivity extends AppCompatActivity {
 
     private AppAdapter mAppAdapter;
     private RecyclerView mRecyclerView;
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_applist);
         mDBUtils = new DBUtils(this);
         initRecyclerView();
     }
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        mRecyclerView = findViewById(R.id.applist);
+        mRecyclerView = findViewById(R.id.app_list);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(mAppAdapter);

@@ -1,8 +1,7 @@
-package com.jhao.playdemo;
+package com.jhao.playdemo.applications;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,8 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.jhao.playdemo.R;
+
 import java.util.List;
-import java.util.zip.Inflater;
 
 /**
  * @author JiangHao

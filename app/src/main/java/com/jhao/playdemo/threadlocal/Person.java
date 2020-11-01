@@ -1,4 +1,4 @@
-package com.jhao.playdemo;
+package com.jhao.playdemo.threadlocal;
 
 import androidx.annotation.NonNull;
 

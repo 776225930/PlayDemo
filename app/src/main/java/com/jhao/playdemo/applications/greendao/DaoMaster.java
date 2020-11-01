@@ -1,4 +1,4 @@
-package com.jhao.playdemo.greendao;
+package com.jhao.playdemo.applications.greendao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
