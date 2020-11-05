@@ -6,6 +6,8 @@ apply plugin: 'org.greenrobot.greendao' // apply plugin
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+
+
     defaultConfig {
         applicationId "com.jhao.playdemo"
         minSdkVersion 21
@@ -13,10 +15,15 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //移除未使用的备用资源
+        resConfig("zh-rCN")
     }
     buildTypes {
         release {
-            minifyEnabled false
+            //代码精简
+            minifyEnabled true
+            //资源精简
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -27,6 +34,33 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+//    flavorDimensions "default"
+//    productFlavors {
+//        arm32 {
+//            dimension "default"
+//            ndk {
+//                abiFilters "armeabi-v7a"
+//            }
+//        }
+//        arm64 {
+//            dimension "default"
+//            ndk {
+//                abiFilters "arm64-v8a"
+//            }
+//        }
+//    }
+    //也可以使用
+    splits {
+        abi{
+            enable true
+            reset()
+            include 'arm64-v8a','armeabi-v7a'
+            //exclude 'armeabi'
+            universalApk true //是否法宝一个含有使用so的apk
+        }
+
+    }
+
 }
 greendao {
     //数据库的schema版本，也可以理解为数据库版本号
