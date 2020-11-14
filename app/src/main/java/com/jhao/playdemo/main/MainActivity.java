@@ -14,6 +14,7 @@ import com.jhao.playdemo.R;
 import com.jhao.playdemo.applications.AppListActivity;
 import com.jhao.playdemo.bitmap.BitmapActivity;
 import com.jhao.playdemo.databinding.ActivityMainBinding;
+import com.jhao.playdemo.toucheventdispatch.ToucheventDispatchActivity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
                 startActivity(new Intent(this, BitmapActivity.class));
                 break;
             case 2:
+                startActivity(new Intent(this, ToucheventDispatchActivity.class));
                 break;
             default:
                 break;

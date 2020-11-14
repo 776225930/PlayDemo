@@ -3,6 +3,7 @@
     <array name="labels">
         <item>AppList</item>
         <item>Bitmap</item>
+        <item>TouchEventDispatch</item>
     </array>
 
 </resources>
